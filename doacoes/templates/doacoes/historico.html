@@ -1,0 +1,67 @@
+
+{% extends 'doacoes/base.html' %}
+
+{% block titulo %}
+Ação Vida - Histórico de Doações
+{% endblock %}
+
+{% block conteudo %}
+
+<h2>Histórico de Doações</h2>
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="mensagem">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+<p>
+    Total de doações registradas:
+    <strong>{{ total_doacoes }}</strong>
+</p>
+
+{% if doacoes %}
+
+    {% for doacao in doacoes %}
+
+        <div class="doacao">
+
+            <h3>{{ doacao.material }}</h3>
+
+            <p>
+                <strong>Responsável:</strong>
+                {{ doacao.responsavel }}
+            </p>
+
+            <p>
+                <strong>Quantidade:</strong>
+                {{ doacao.quantidade }}
+                {{ doacao.unidade }}
+            </p>
+
+            <p>
+                <strong>Data:</strong>
+                {{ doacao.data_cadastro|date:"d/m/Y H:i" }}
+            </p>
+
+        </div>
+
+    {% endfor %}
+
+{% else %}
+
+    <p>Ainda não existem doações cadastradas.</p>
+
+{% endif %}
+
+<a href="{% url 'cadastrar_doacao' %}" class="botao">
+    Cadastrar Nova Doação
+</a>
+
+<a href="{% url 'inicio' %}" class="botao">
+    Voltar ao Início
+</a>
+
+{% endblock %}

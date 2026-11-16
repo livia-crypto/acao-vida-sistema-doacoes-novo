@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block titulo %}Ação Vida{% endblock %}</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7f2;
+            color: #263b2b;
+        }
+
+        header {
+            background: #276749;
+            color: white;
+            padding: 22px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        nav {
+            background: #1f543c;
+            padding: 14px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+        }
+
+        main {
+            width: 90%;
+            max-width: 850px;
+            margin: 35px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #00000012;
+        }
+
+        h2 {
+            color: #276749;
+        }
+
+        .botao {
+            display: inline-block;
+            background: #276749;
+            color: white;
+            border: none;
+            padding: 13px 20px;
+            border-radius: 7px;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .botao:hover {
+            background: #1f543c;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 7px;
+            margin-bottom: 15px;
+            border: 1px solid #b8c9ba;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .mensagem {
+            padding: 14px;
+            background: #e2f5e8;
+            border: 1px solid #8ac49a;
+            border-radius: 7px;
+            margin-bottom: 18px;
+        }
+
+        .erro {
+            color: #a12626;
+            font-size: 14px;
+        }
+
+        .doacao {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #526456;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                padding: 20px;
+                margin: 20px auto;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Ação Vida</h1>
+        <p>Juntos por um mundo mais solidário!</p>
+    </header>
+
+    <nav>
+        <a href="{% url 'inicio' %}">Início</a>
+        <a href="{% url 'cadastrar_doacao' %}">Cadastrar Doação</a>
+        <a href="{% url 'historico' %}">Histórico</a>
+    </nav>
+
+    <main>
+        {% block conteudo %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        Sistema de gerenciamento de doações – Ação Vida
+    </footer>
+
+</body>
+</html>
