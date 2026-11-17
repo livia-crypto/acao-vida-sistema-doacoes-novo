@@ -52,3 +52,4 @@ Facilitar o registro das doações recebidas, armazenando informações sobre re
    python manage.py runserver
 
 8. Acesse http://127.0.0.1:8000/
+# acao-vida-sistema-doacoes
