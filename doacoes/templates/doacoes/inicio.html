@@ -1,0 +1,29 @@
+
+{% extends 'doacoes/base.html' %}
+
+{% block titulo %}
+Ação Vida - Início
+{% endblock %}
+
+{% block conteudo %}
+
+<h2>Bem-vindo ao Ação Vida!</h2>
+
+<p>
+    Este sistema foi desenvolvido para ajudar na organização
+    e no acompanhamento das doações recebidas pela instituição.
+</p>
+
+<p>
+    Registre as doações e consulte os materiais já cadastrados.
+</p>
+
+<a href="{% url 'cadastrar_doacao' %}" class="botao">
+    Cadastrar Doação
+</a>
+
+<a href="{% url 'historico' %}" class="botao">
+    Histórico de Doações
+</a>
+
+{% endblock %}
